@@ -1,1 +1,2 @@
-# js_todo
+# ToDo List
+JavaScript 中級課題
