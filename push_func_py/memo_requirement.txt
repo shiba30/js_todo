@@ -1,0 +1,4 @@
+python3 -m pip install pydantic --break-system-packages;
+python3 -m pip uninstall pydantic[email] --break-system-packages;
+
+pydantic==2.9.2

@@ -1,0 +1,50 @@
+{
+  // Pythonファイルに対する設定
+  "[python]": {
+      // Black Formatterをデフォルトのフォーマッターとして指定
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      // 保存時に自動フォーマットを実行
+      "editor.formatOnSave": true,
+      // 保存時にインポートの整理を実行（explicitにより明示的に指定された場合のみ）
+      "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+      }
+  },
+
+  // Flake8の引数設定
+  "flake8.args": [
+      "--max-line-length=99", // 1行の最大文字数を99に制限
+      "--ignore=E402" // 指定されたエラールールを無視（E203, E501, W503, W504）
+  ],
+
+  // Pythonの診断の重大度をオーバーライド
+  "python.analysis.diagnosticSeverityOverrides": {
+      "reportMissingImports": "warning", // モジュールが見つからない場合の警告を表示
+      "reportUndefinedVariable": "warning", // 未定義の変数に対する警告を表示
+      "reportUnusedImport": "warning", // 使用されていないインポートに対する警告を表示
+      "reportUnusedVariable": "warning", // 使用されていない変数に対する警告を表示
+      "reportDeprecatedImport": "warning" // 非推奨のインポートに対する警告を表示
+  },
+
+  // 保存時にコードの追加チェックを行う
+  "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit" // 保存時にすべての問題を修正
+  },
+
+  // Python自動補完とインテリセンスを高速化
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.useLibraryCodeForTypes": true,
+
+  // Pythonのテストフレームワーク設定
+  "python.testing.pytestEnabled": true, // Pytestを使用してテストを実行
+  "python.testing.unittestEnabled": false, // Unittestは無効化
+  "python.testing.pytestArgs": [
+      "tests" // テストディレクトリを指定
+  ],
+
+  // 保存前に自動的にファイルを整形
+  "editor.formatOnPaste": true, // 貼り付け時に自動整形
+  "files.trimTrailingWhitespace": true, // 行末の余分な空白を削除
+  "files.insertFinalNewline": true, // ファイルの末尾に改行を追加
+  "files.trimFinalNewlines": true // 余分な末尾の改行を削除
+}
